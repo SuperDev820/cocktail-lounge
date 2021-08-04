@@ -7,7 +7,9 @@ import MenuItem from '@material-ui/core/MenuItem';
 import Link from '@material-ui/core/Link';
 import Card from '@material-ui/core/Card';
 import CardContent from '@material-ui/core/CardContent';
+import Grid from '@material-ui/core/Grid';
 import ArrowDropDownIcon from '@material-ui/icons/ArrowDropDown';
+import Avatar from '@material-ui/core/Avatar';
 import { makeStyles } from '@material-ui/core/styles';
 
 import '../style/home.css';
@@ -32,64 +34,109 @@ export default function Home() {
   return (
     <div className="main">
       <Container maxWidth="md">
-        <div style={{paddingTop: '50px',paddingBottom: '40px',}}>
-          <Button variant="contained">Connect Wallet</Button>
-        </div>
-        <div className="title">
-          <img src="images/logo.png" className="logo" alt="logo" />
-          <Typography variant="h3" component="p" gutterBottom>
-            COCKTAIL LOUNGE
-          </Typography>
-        </div>
-        <Typography variant="body2" gutterBottom>
-          Current Reward Currency:
-        </Typography>
-        <div>
-          <div>
-            <Button variant="contained" color="default" aria-controls="simple-menu" aria-haspopup="true" onClick={handleClick}>
-              Switch Reward Currency
-              <ArrowDropDownIcon />
-            </Button>
-            <Menu
-              id="simple-menu"
-              anchorEl={anchorEl}
-              keepMounted
-              open={Boolean(anchorEl)}
-              onClose={handleClose}
-            >
-              <MenuItem onClick={handleClose}>BNB</MenuItem>
-            </Menu>
+        <div style={{width: '80%',margin: 'auto',paddingTop: '20px',paddingBottom: '20px',}}>
+          <div style={{paddingTop: '30px',paddingBottom: '30px',}}>
+            <Button variant="contained">Connect Wallet</Button>
           </div>
-          <Button variant="contained">Claim</Button>
+          <div className="title">
+            <img src="images/logo.png" className="logo" alt="logo" />
+            <Typography component="p">
+              COCKTAIL LOUNGE
+            </Typography>
+          </div>
+          <Typography variant="h6" style={{marginTop: '15px',marginBottom: '20px',}}>
+            Current Reward Currency:
+          </Typography>
+          <div style={{marginBottom: '50px',}}>
+            <div style={{display: 'flex',justifyContent: 'space-between',margin: 'auto',width: '400px',}}>
+              <div>
+                <Button variant="contained" style={{width: '280px',}} color="default" aria-controls="simple-menu" aria-haspopup="true" onClick={handleClick}>
+                  Switch Reward Currency
+                  <ArrowDropDownIcon />
+                </Button>
+                <Menu
+                  id="simple-menu"
+                  anchorEl={anchorEl}
+                  keepMounted
+                  open={Boolean(anchorEl)}
+                  onClose={handleClose}
+                >
+                  <MenuItem onClick={handleClose}>
+                    <Avatar alt="avatar" src="images/default-image.png" />
+                    <Typography variant="inherit" className="menu-span1">BNB</Typography>
+                  </MenuItem>
+                  <MenuItem onClick={handleClose}>
+                    <Avatar alt="avatar" src="images/default-image.png" />
+                    <Typography variant="inherit" className="menu-text-1">BTC</Typography>
+                    <Typography variant="inherit" className="menu-text-2">Pegged</Typography>
+                  </MenuItem>
+                </Menu>
+              </div>
+              <Button variant="contained" style={{width: '100px',}}>Claim</Button>
+            </div>
+          </div> 
+          <div className="card-div">
+            <Card className="blue_box_large">
+              <CardContent style={{display: 'flex',alignItems: 'center',}}>
+                <img alt="" src="images/default-image.png" />
+                <Grid container direction="column" justifyContent="space-around" className="card-content">
+                  <Grid item xs={12}>
+                    <Typography component="p" className="card-text-1">
+                      Payout Loading
+                    </Typography>
+                  </Grid>
+                  <Grid item xs={12}>
+                    <Typography component="p" className="card-text-2">
+                      Processing - remaining
+                    </Typography>
+                  </Grid>
+                  <Grid item xs={12}>
+                    <Typography component="p" className="card-text-2">
+                      Pending : 0.0198 BNB
+                    </Typography>
+                  </Grid>
+                </Grid>
+              </CardContent>
+            </Card>
+            <Card className="blue_box">
+              <CardContent style={{display: 'flex',alignItems: 'center',}}>
+                <img alt="avatar" src="images/default-image.png" />
+                <Grid container direction="column" justifyContent="space-around" spacing={1} className="card-content">
+                  <Grid item xs={12}>
+                    <Typography component="p" className="card-text-1">
+                      Your Cocktail Holdings
+                    </Typography>
+                  </Grid>
+                  <Grid item xs={12}>
+                    <Typography component="p" className="card-text-2">
+                      - Cocktails
+                    </Typography>
+                  </Grid>
+                </Grid>
+              </CardContent>
+            </Card>
+            <Card className="blue_box">
+              <CardContent style={{display: 'flex',alignItems: 'center',}}>
+                <img alt="avatar" src="images/default-image.png" />
+                <Grid container direction="column" justifyContent="space-around" spacing={1} className="card-content">
+                  <Grid item xs={12}>
+                    <Typography component="p" className="card-text-1">
+                      Total BNB paid
+                    </Typography>
+                  </Grid>
+                  <Grid item xs={12}>
+                    <Typography component="p" className="card-text-2">
+                      0.624 BNB - $200.81
+                    </Typography>
+                  </Grid>
+                </Grid>
+              </CardContent>
+            </Card>
+          </div>
+          <Link href="#" onClick={preventDefault} color="inherit" variant="body1">
+            Disclaimer
+          </Link>
         </div>
-        <div>
-          <Card className="blue_box_large">
-            <CardContent>
-              <Typography variant="body2" component="p">
-                Payout Loading
-              </Typography>
-              <Typography variant="body2" component="p">
-                Processing - remaining
-              </Typography>
-              <Typography variant="body2" component="p">
-                Pending : 0.0198 BNB
-              </Typography>
-            </CardContent>
-          </Card>
-          <Card className="blue_box">
-            <CardContent>
-              <Typography variant="body2" component="p">
-                Your Cocktail Holdings
-              </Typography>
-              <Typography variant="body2" component="p">
-                - Cocktails
-              </Typography>
-            </CardContent>
-          </Card>
-        </div>
-        <Link href="#" onClick={preventDefault} color="inherit">
-          Disclaimer
-        </Link>
       </Container>
     </div>
   );

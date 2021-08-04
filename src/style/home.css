@@ -3,14 +3,32 @@
 	background-color: black;
 	color: white;
 	text-align: center;
+	min-height: 100vh;
 }
 .title {
 	display: flex;
 	align-items: center;
+	justify-content: space-around;
+}
+.title p {
+	font-weight: 600;
+	font-size: 65px;
+	margin-bottom: 0
+}
+.menu-text-1 {
+	font-weight: 500;
+	padding-right: 6px;
+}
+.menu-text-2 {
+	font-style: italic;
+}
+.card-div {
+	width: 444px;
+	margin: auto;
 }
 .blue_box_large {
 	box-sizing: inherit !important;
-	width: 90%;
+	width: 100%;
 	margin: auto;
 	margin-bottom: 20px;
 	animation-name: stretch;
@@ -19,14 +37,44 @@
 	animation-direction: alternate;
 	animation-iteration-count: infinite;
 	animation-play-state: running;
-	background: linear-gradient(90deg, #4523ff, #931edc);
+	background: linear-gradient(90deg, #5132fd, #8e56b1);
+	color: white !important;
+	text-align: left;
+	box-shadow: 0px 0px 20px #e8d4ee !important;
+	border-radius: 18px !important;
+	margin-bottom: 45px;
+}
+.blue_box_large img {
+	width: 80px;
+	padding-right: 20px;
 }
 .blue_box {
 	box-sizing: inherit !important;
-	width: 80%;
+	width: 90%;
 	margin: auto;
 	margin-bottom: 20px;
-	background: linear-gradient(90deg, #4523ff, #931edc);
+	background: linear-gradient(90deg, #5132fd, #8e56b1);
+	color: white !important;
+	box-shadow: 0px 0px 20px #e8d4ee !important;
+	border-radius: 18px !important;
+	margin-bottom: 35px;
+	text-align: left;
+}
+.blue_box img {
+	width: 80px;
+	padding-right: 20px;
+	border-right: solid 1px #0e2d62;
+}
+.card-content {
+	padding-left: 20px;
+}
+.card-text-1 {
+	font-weight: 500 !important;
+	font-size: 20px !important;
+}
+.card-text-2 {
+	font-size: 18px !important;
+	font-weight: 30 !important;
 }
 
 @keyframes stretch {
