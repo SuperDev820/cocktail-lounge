@@ -1,0 +1,39 @@
+.main {
+	/* background-image: url("images/background.png"); */
+	background-color: black;
+	color: white;
+	text-align: center;
+}
+.title {
+	display: flex;
+	align-items: center;
+}
+.blue_box_large {
+	box-sizing: inherit !important;
+	width: 90%;
+	margin: auto;
+	margin-bottom: 20px;
+	animation-name: stretch;
+	animation-duration: 1.0s;
+	animation-timing-function: ease-out;
+	animation-direction: alternate;
+	animation-iteration-count: infinite;
+	animation-play-state: running;
+	background: linear-gradient(90deg, #4523ff, #931edc);
+}
+.blue_box {
+	box-sizing: inherit !important;
+	width: 80%;
+	margin: auto;
+	margin-bottom: 20px;
+	background: linear-gradient(90deg, #4523ff, #931edc);
+}
+
+@keyframes stretch {
+	0% {
+		transform: scale(90%);
+	}
+	100% {
+		transform: scale(100%);
+	}
+}
