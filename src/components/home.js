@@ -132,6 +132,40 @@ export default function Home() {
                 </Grid>
               </CardContent>
             </Card>
+            <Card className="blue_box">
+              <CardContent style={{display: 'flex',alignItems: 'center',}}>
+                <img alt="avatar" src="images/default-image.png" />
+                <Grid container direction="column" justifyContent="space-around" spacing={1} className="card-content">
+                  <Grid item xs={12}>
+                    <Typography component="p" className="card-text-1">
+                      Last Payout Received
+                    </Typography>
+                  </Grid>
+                  <Grid item xs={12}>
+                    <Typography component="p" className="card-text-2">
+                      $6.47
+                    </Typography>
+                  </Grid>
+                </Grid>
+              </CardContent>
+            </Card>
+            <Card className="blue_box">
+              <CardContent style={{display: 'flex',alignItems: 'center',}}>
+                <img alt="avatar" src="images/default-image.png" />
+                <Grid container direction="column" justifyContent="space-around" spacing={1} className="card-content">
+                  <Grid item xs={12}>
+                    <Typography component="p" className="card-text-1">
+                      Last Payout Time
+                    </Typography>
+                  </Grid>
+                  <Grid item xs={12}>
+                    <Typography component="p" className="card-text-2">
+                      3 hours ago
+                    </Typography>
+                  </Grid>
+                </Grid>
+              </CardContent>
+            </Card>
           </div>
           <Link href="#" onClick={preventDefault} color="inherit" variant="body1">
             Disclaimer
